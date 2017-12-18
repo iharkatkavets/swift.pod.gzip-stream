@@ -1,11 +1,13 @@
 use_frameworks!
+platform :ios, '9.0'
 
 target 'GZipStream_Example' do
   pod 'GZipStream', :path => '../'
-
-  target 'GZipStream_Tests' do
-    inherit! :search_paths
-
-    
-  end
 end
+
+target 'GZipStream_Tests' do
+  inherit! :search_paths
+  pod 'GZipStream', :path => '../'
+  pod 'CleanTests', :git => 'https://github.com/igorkotkovets/pod.swift.clean-tests.git'
+end
+

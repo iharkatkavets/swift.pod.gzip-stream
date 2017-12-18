@@ -13,7 +13,10 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		D8A045EE1FE815E000F203E8 /* GZipIOStreamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A045E61FE815A200F203E8 /* GZipIOStreamTests.swift */; };
+		D8A045EF1FE815E200F203E8 /* GZipOutputStreamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A045E81FE815A200F203E8 /* GZipOutputStreamTests.swift */; };
+		D8A045F01FE815E500F203E8 /* GZipInputStreamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A045E71FE815A200F203E8 /* GZipInputStreamTests.swift */; };
+		D8A045F11FE815E800F203E8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A045E91FE815A200F203E8 /* Constants.swift */; };
 		E06E36758C8E2016D5773C54 /* Pods_GZipStream_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25C1FEE60BBAC03135A596A /* Pods_GZipStream_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +33,7 @@
 /* Begin PBXFileReference section */
 		1399F716B4E7B61039FAE47D /* Pods-GZipStream_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GZipStream_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GZipStream_Tests/Pods-GZipStream_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		18D4CB5EC30D1E76C3BBAC48 /* Pods_GZipStream_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GZipStream_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		47D70578B6427B44E7C680A9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		47D70578B6427B44E7C680A9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* GZipStream_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GZipStream_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,13 +43,16 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* GZipStream_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GZipStream_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		B25C1FEE60BBAC03135A596A /* Pods_GZipStream_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GZipStream_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B6CADE4119B6511DB13774ED /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		B6CADE4119B6511DB13774ED /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		C28CCC058B1AEF320E87520D /* Pods-GZipStream_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GZipStream_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GZipStream_Tests/Pods-GZipStream_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C7E374C01843150EC2BA2889 /* Pods-GZipStream_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GZipStream_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-GZipStream_Example/Pods-GZipStream_Example.release.xcconfig"; sourceTree = "<group>"; };
 		D3BDE27C1997D430B13B892B /* Pods-GZipStream_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GZipStream_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GZipStream_Example/Pods-GZipStream_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		DB5B1470EF7CDD28FA210ED8 /* GZipStream.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = GZipStream.podspec; path = ../GZipStream.podspec; sourceTree = "<group>"; };
+		D8A045E61FE815A200F203E8 /* GZipIOStreamTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZipIOStreamTests.swift; sourceTree = "<group>"; };
+		D8A045E71FE815A200F203E8 /* GZipInputStreamTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZipInputStreamTests.swift; sourceTree = "<group>"; };
+		D8A045E81FE815A200F203E8 /* GZipOutputStreamTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZipOutputStreamTests.swift; sourceTree = "<group>"; };
+		D8A045E91FE815A200F203E8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DB5B1470EF7CDD28FA210ED8 /* GZipStream.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = GZipStream.podspec; path = ../GZipStream.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +132,10 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				D8A045E91FE815A200F203E8 /* Constants.swift */,
+				D8A045E71FE815A200F203E8 /* GZipInputStreamTests.swift */,
+				D8A045E61FE815A200F203E8 /* GZipIOStreamTests.swift */,
+				D8A045E81FE815A200F203E8 /* GZipOutputStreamTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -285,9 +294,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GZipStream_Tests/Pods-GZipStream_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GZipStream/GZipStream.framework",
+				"${BUILT_PRODUCTS_DIR}/CleanTests/CleanTests.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GZipStream.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CleanTests.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -379,7 +393,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				D8A045EF1FE815E200F203E8 /* GZipOutputStreamTests.swift in Sources */,
+				D8A045EE1FE815E000F203E8 /* GZipIOStreamTests.swift in Sources */,
+				D8A045F01FE815E500F203E8 /* GZipInputStreamTests.swift in Sources */,
+				D8A045F11FE815E800F203E8 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
