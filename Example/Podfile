@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'GZipStream_Example' do
+  pod 'GZipStream', :path => '../'
+
+  target 'GZipStream_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
