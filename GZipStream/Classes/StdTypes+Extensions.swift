@@ -78,20 +78,16 @@ public extension Data {
 
 public extension UnsafeMutablePointer where Pointee: FixedWidthInteger {
     public func compare(with buffer: UnsafeMutablePointer<Pointee>, size: Int) -> Bool {
-        for i in 0..<size {
-            if self[i] != buffer[i] {
-                return false
-            }
+        for i in 0..<size where self[i] != buffer[i] {
+            return false
         }
 
         return true
     }
 
     public func compare(with buffer: UnsafePointer<Pointee>, size: Int) -> Bool {
-        for i in 0..<size {
-            if self[i] != buffer[i] {
-                return false
-            }
+        for i in 0..<size where self[i] != buffer[i] {
+            return false
         }
 
         return true
@@ -100,20 +96,16 @@ public extension UnsafeMutablePointer where Pointee: FixedWidthInteger {
 
 public extension UnsafePointer where Pointee: FixedWidthInteger {
     public func compare(with buffer: UnsafePointer<Pointee>, size: Int) -> Bool {
-        for i in 0..<size {
-            if self[i] != buffer[i] {
-                return false
-            }
+        for i in 0..<size where self[i] != buffer[i] {
+            return false
         }
 
         return true
     }
 
     public func compare(with buffer: UnsafeMutablePointer<Pointee>, size: Int) -> Bool {
-        for i in 0..<size {
-            if self[i] != buffer[i] {
-                return false
-            }
+        for i in 0..<size where self[i] != buffer[i] {
+            return false
         }
 
         return true

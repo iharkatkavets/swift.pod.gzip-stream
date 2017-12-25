@@ -181,6 +181,7 @@
 				607FACCE1AFB9204008FA782 /* Resources */,
 				D1F8F279378DE38AA687B5D0 /* [CP] Embed Pods Frameworks */,
 				B4761509227216CD145418C6 /* [CP] Copy Pods Resources */,
+				D82BD70F1FF1822B0068C9EF /* SwiftLint analysis */,
 			);
 			buildRules = (
 			);
@@ -358,6 +359,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GZipStream_Example/Pods-GZipStream_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		D82BD70F1FF1822B0068C9EF /* SwiftLint analysis */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint analysis";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		F7BA7456FDBEF79E72D4967A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

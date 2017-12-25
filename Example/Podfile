@@ -3,6 +3,7 @@ platform :ios, '9.0'
 
 target 'GZipStream_Example' do
   pod 'GZipStream', :path => '../'
+  pod 'SwiftLint'
 end
 
 target 'GZipStream_Tests' do

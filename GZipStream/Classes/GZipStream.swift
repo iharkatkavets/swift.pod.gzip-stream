@@ -14,8 +14,6 @@ enum GZipStreamError: Swift.Error {
     case invalid
     case unableToProcessStream
     case failedToReadCompressedData
-
-
     case inflateInit2(Int32)
     case deflateInit2(Int32)
     case deflate(Int32)
@@ -38,7 +36,7 @@ public class GZipInputStream: InputStream {
 
     public init(with inputStream: InputStream) throws {
         self.inputStream = inputStream
-        
+
         zstream = z_stream()
         zstream.zalloc = nil
         zstream.zfree = nil
@@ -198,6 +196,10 @@ public class GZipOutputStream: OutputStream {
         if result != Z_OK {
             throw GZipStreamError.deflateInit2(result)
         }
+    }
+
+    deinit {
+        outputBuffer.deallocate(capacity: GZipStreamConstants.gzipOutputBufferSize)
     }
 
     public func write(_ buffer: UnsafePointer<UInt8>, maxLength len: Int) throws -> Int {
