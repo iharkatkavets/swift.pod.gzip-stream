@@ -1,14 +1,14 @@
 //
 //  StdTypes+Extensions.swift
-//  Pods
+//  XML2Swift
 //
-//  Created by Igor Kotkovets on 11/8/17.
+//  Created by Igor Kotkovets on 12/22/17.
 //
 
 import Foundation
 
 public extension FixedWidthInteger {
-    func hexString(withAdding prefix: String? = "0x") -> String {
+    func hexString(withAdding prefix: String? = nil) -> String {
         var copy = self
 
         return withUnsafePointer(to: &copy) { ptr -> String in
@@ -25,8 +25,8 @@ public extension FixedWidthInteger {
 }
 
 public extension Data {
-    var hexString: String {
-        var result = ""
+    func hexString(withAdding prefix: String? = nil) -> String {
+        var result = prefix ?? ""
         var bytes = [UInt8](repeating: 0, count: count)
         copyBytes(to: &bytes, count: count)
 
@@ -77,39 +77,71 @@ public extension Data {
 }
 
 public extension UnsafeMutablePointer where Pointee: FixedWidthInteger {
-    public func compare(with buffer: UnsafeMutablePointer<Pointee>, size: Int) -> Bool {
-        for i in 0..<size where self[i] != buffer[i] {
+    public func isEqual(to buffer: UnsafeMutablePointer<Pointee>, ofLength length: Int) -> Bool {
+        for i in 0..<length where self[i] != buffer[i] {
             return false
         }
 
         return true
     }
 
-    public func compare(with buffer: UnsafePointer<Pointee>, size: Int) -> Bool {
-        for i in 0..<size where self[i] != buffer[i] {
+    public func isEqual(to buffer: UnsafePointer<Pointee>, ofLength length: Int) -> Bool {
+        for i in 0..<length where self[i] != buffer[i] {
             return false
         }
 
         return true
+    }
+
+    public func hexString(ofLength len: Int, withAdding prefix: String? = nil) -> String {
+        let count = MemoryLayout<Pointee>.size
+        return self.withMemoryRebound(to: UInt8.self, capacity: count) { (bytes) -> String in
+            var str: String = prefix ?? ""
+            for i in 0..<count*len {
+                str += String(format: "%02x", bytes[i])
+            }
+            return str
+        }
     }
 }
 
 public extension UnsafePointer where Pointee: FixedWidthInteger {
-    public func compare(with buffer: UnsafePointer<Pointee>, size: Int) -> Bool {
-        for i in 0..<size where self[i] != buffer[i] {
+    public func isEqual(to buffer: UnsafePointer<Pointee>, ofLength length: Int) -> Bool {
+        for i in 0..<length where self[i] != buffer[i] {
             return false
         }
 
         return true
     }
 
-    public func compare(with buffer: UnsafeMutablePointer<Pointee>, size: Int) -> Bool {
-        for i in 0..<size where self[i] != buffer[i] {
+    public func isEqual(to buffer: UnsafeMutablePointer<Pointee>, ofLength length: Int) -> Bool {
+        for i in 0..<length where self[i] != buffer[i] {
             return false
         }
 
         return true
+    }
+
+    public func hexString(ofLength len: Int, withAdding prefix: String? = nil) -> String {
+        let count = MemoryLayout<Pointee>.size
+        return self.withMemoryRebound(to: UInt8.self, capacity: count) { (bytes) -> String in
+            var str: String = prefix ?? ""
+            for i in 0..<count*len {
+                str += String(format: "%02x", bytes[i])
+            }
+            return str
+        }
     }
 }
 
+extension String {
+    func xmlChar() -> [UInt8]? {
+        guard let cStr = cString(using: .utf8) else {
+            return nil
+        }
 
+        return cStr.withUnsafeBytes {
+            return Array($0)
+        }
+    }
+}
